@@ -1,0 +1,10 @@
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE DATABASE "rails_react_recipe_development" ENCODING = 'unicode'[0m
+  [1m[35m (369.3ms)[0m  [1m[35mCREATE DATABASE "rails_react_recipe_development" ENCODING = 'unicode'[0m
+  [1m[35m (284.4ms)[0m  [1m[35mCREATE DATABASE "rails_react_recipe_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2024-09-17 20:35:19 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/paul/.rbenv/versions/3.1.6/lib/ruby/gems/3.1.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/paul/.rbenv/versions/3.1.6/lib/ruby/gems/3.1.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 635)
+Completed 200 OK in 50ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 7034)
+
+
