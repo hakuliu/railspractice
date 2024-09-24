@@ -8,3 +8,88 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 50ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 7034)
 
 
+Started GET "/" for 127.0.0.1 at 2024-09-18 21:49:44 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 956.0ms | Allocations: 98827)
+Completed 200 OK in 989ms (Views: 959.8ms | ActiveRecord: 0.0ms | Allocations: 102899)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-23 21:15:45 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 319)
+  Rendered layout layouts/application.html.erb (Duration: 174.0ms | Allocations: 22947)
+Completed 200 OK in 200ms (Views: 183.5ms | ActiveRecord: 0.0ms | Allocations: 27020)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-24 23:29:32 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 319)
+  Rendered layout layouts/application.html.erb (Duration: 1275.6ms | Allocations: 88889)
+Completed 200 OK in 1310ms (Views: 1281.6ms | ActiveRecord: 0.0ms | Allocations: 92961)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-24 23:30:01 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 2639)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 2945)
+
+
+Started GET "/index" for 127.0.0.1 at 2024-09-24 23:30:38 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/" for 127.0.0.1 at 2024-09-25 21:50:52 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 319)
+  Rendered layout layouts/application.html.erb (Duration: 2883.1ms | Allocations: 66562)
+Completed 200 OK in 2939ms (Views: 2888.7ms | ActiveRecord: 0.0ms | Allocations: 70634)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-25 21:51:01 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2636)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 2942)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-25 21:51:03 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2576)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 2824)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-25 21:52:21 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2552)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2800)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-25 21:55:30 +0000
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 319)
+  Rendered layout layouts/application.html.erb (Duration: 1606.8ms | Allocations: 66912)
+Completed 200 OK in 1644ms (Views: 1613.8ms | ActiveRecord: 0.0ms | Allocations: 70984)
+
+
