@@ -1676,7 +1676,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context2);
         }
-        function useState3(initialState) {
+        function useState4(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1688,7 +1688,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect3(create, deps) {
+        function useEffect4(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -2471,7 +2471,7 @@ var require_react_development = __commonJS({
         exports.useContext = useContext3;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect3;
+        exports.useEffect = useEffect4;
         exports.useId = useId;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect;
@@ -2479,7 +2479,7 @@ var require_react_development = __commonJS({
         exports.useMemo = useMemo3;
         exports.useReducer = useReducer;
         exports.useRef = useRef3;
-        exports.useState = useState3;
+        exports.useState = useState4;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -2975,9 +2975,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React7 = require_react();
+        var React8 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -4584,7 +4584,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React7.Children.forEach(props.children, function(child) {
+                React8.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -30095,13 +30095,13 @@ var AttributeObserver = class {
   }
 };
 function add(map, key, value) {
-  fetch(map, key).add(value);
+  fetch2(map, key).add(value);
 }
 function del(map, key, value) {
-  fetch(map, key).delete(value);
+  fetch2(map, key).delete(value);
   prune(map, key);
 }
-function fetch(map, key) {
+function fetch2(map, key) {
   let values = map.get(key);
   if (!values) {
     values = /* @__PURE__ */ new Set();
@@ -37133,14 +37133,14 @@ enableDismissTrigger(Toast);
 defineJQueryPlugin(Toast);
 
 // app/javascript/components/index.jsx
-var import_react4 = __toESM(require_react());
+var import_react5 = __toESM(require_react());
 var import_client = __toESM(require_client());
 
 // app/javascript/components/App.jsx
-var import_react3 = __toESM(require_react());
+var import_react4 = __toESM(require_react());
 
 // app/javascript/routes/index.jsx
-var import_react2 = __toESM(require_react());
+var import_react3 = __toESM(require_react());
 
 // node_modules/react-router-dom/dist/index.js
 var React2 = __toESM(require_react());
@@ -39081,18 +39081,45 @@ var Home_default = () => /* @__PURE__ */ import_react.default.createElement("div
   "View Recipes"
 ))));
 
+// app/javascript/components/Recipes.jsx
+var import_react2 = __toESM(require_react());
+var Recipes = () => {
+  const navigate = useNavigate();
+  const [recipes, setRecipes] = (0, import_react2.useState)([]);
+  (0, import_react2.useEffect)(() => {
+    const url = "api/v1/recipes/index";
+    fetch(url).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error("Network response was not ok.");
+    }).then((res) => setRecipes(res)).catch(() => navigate("/"));
+  }, []);
+  const allRecipes = recipes.map((recipe, index) => /* @__PURE__ */ import_react2.default.createElement("div", { key: index, className: "col-md-6 col-lg-4" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "card mb-4" }, /* @__PURE__ */ import_react2.default.createElement(
+    "img",
+    {
+      src: recipe.image,
+      className: "card-img-top",
+      alt: `${recipe.name} image`
+    }
+  ), /* @__PURE__ */ import_react2.default.createElement("div", { className: "card-body" }, /* @__PURE__ */ import_react2.default.createElement("h5", { className: "card-title" }, recipe.name), /* @__PURE__ */ import_react2.default.createElement(Link, { to: `/recipe/${recipe.id}`, className: "btn custom-button" }, "View Recipe")))));
+  const noRecipe = /* @__PURE__ */ import_react2.default.createElement("div", { className: "vw-100 vh-50 d-flex align-items-center justify-content-center" }, /* @__PURE__ */ import_react2.default.createElement("h4", null, "No recipes yet. Why not ", /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/new_recipe" }, "create one")));
+  return /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null, /* @__PURE__ */ import_react2.default.createElement("section", { className: "jumbotron jumbotron-fluid text-center" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "container py-5" }, /* @__PURE__ */ import_react2.default.createElement("h1", { className: "display-4" }, "Recipes for every occasion"), /* @__PURE__ */ import_react2.default.createElement("p", { className: "lead text-muted" }, "We\u2019ve pulled together our most popular recipes, our latest additions, and our editor\u2019s picks, so there\u2019s sure to be something tempting for you to try."))), /* @__PURE__ */ import_react2.default.createElement("div", { className: "py-5" }, /* @__PURE__ */ import_react2.default.createElement("main", { className: "container" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: "text-end mb-3" }, /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/recipe", className: "btn custom-button" }, "Create New Recipe")), /* @__PURE__ */ import_react2.default.createElement("div", { className: "row" }, recipes.length > 0 ? allRecipes : noRecipe), /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/", className: "btn btn-link" }, "Home"))));
+};
+var Recipes_default = Recipes;
+
 // app/javascript/routes/index.jsx
-var routes_default = /* @__PURE__ */ import_react2.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react2.default.createElement(Routes, null, /* @__PURE__ */ import_react2.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react2.default.createElement(Home_default, null) })));
+var routes_default = /* @__PURE__ */ import_react3.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react3.default.createElement(Routes, null, /* @__PURE__ */ import_react3.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react3.default.createElement(Home_default, null) }), /* @__PURE__ */ import_react3.default.createElement(Route, { path: "/recipes", element: /* @__PURE__ */ import_react3.default.createElement(Recipes_default, null) })));
 
 // app/javascript/components/App.jsx
-var App_default = (props) => /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, routes_default);
+var App_default = (props) => /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, routes_default);
 
 // app/javascript/components/index.jsx
 document.addEventListener("turbo:load", () => {
   const root = (0, import_client.createRoot)(
     document.body.appendChild(document.createElement("div"))
   );
-  root.render(/* @__PURE__ */ import_react4.default.createElement(App_default, null));
+  root.render(/* @__PURE__ */ import_react5.default.createElement(App_default, null));
 });
 /*! Bundled license information:
 

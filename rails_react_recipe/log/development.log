@@ -93,3 +93,363 @@ Processing by HomepageController#index as HTML
 Completed 200 OK in 1644ms (Views: 1613.8ms | ActiveRecord: 0.0ms | Allocations: 70984)
 
 
+  [1m[35m (554.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (144.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (27.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4756338405265642755)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20240930221449)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4756338405265642755)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4756338405265642755)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20240930221449)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (179.8ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" bigserial primary key, "name" character varying NOT NULL, "ingredients" text NOT NULL, "instruction" text NOT NULL, "image" character varying DEFAULT 'https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240930221449"]]
+  [1m[36mTRANSACTION (21.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (17.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-30 22:25:50.104275"], ["updated_at", "2024-09-30 22:25:50.104275"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4756338405265642755)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 1"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.364056"], ["updated_at", "2024-09-30 22:54:54.364056"]]
+  [1m[36mTRANSACTION (19.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 2"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.389852"], ["updated_at", "2024-09-30 22:54:54.389852"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 3"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.398360"], ["updated_at", "2024-09-30 22:54:54.398360"]]
+  [1m[36mTRANSACTION (38.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 4"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.440359"], ["updated_at", "2024-09-30 22:54:54.440359"]]
+  [1m[36mTRANSACTION (28.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 5"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.475380"], ["updated_at", "2024-09-30 22:54:54.475380"]]
+  [1m[36mTRANSACTION (64.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 6"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.548931"], ["updated_at", "2024-09-30 22:54:54.548931"]]
+  [1m[36mTRANSACTION (20.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 7"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.573698"], ["updated_at", "2024-09-30 22:54:54.573698"]]
+  [1m[36mTRANSACTION (20.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 8"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.598744"], ["updated_at", "2024-09-30 22:54:54.598744"]]
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "ingredients", "instruction", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Recipe 9"], ["ingredients", "227g tub clotted cream, 25g butter, 1 tsp cornflour,100g parmesan, grated nutmeg, 250g fresh fettuccine or tagliatelle, snipped chives or chopped parsley to serve (optional)"], ["instruction", "In a medium saucepan, stir the clotted cream, butter, and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm."], ["image", "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"], ["created_at", "2024-09-30 22:54:54.623862"], ["updated_at", "2024-09-30 22:54:54.623862"]]
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 318)
+  Rendered layout layouts/application.html.erb (Duration: 1247.0ms | Allocations: 67028)
+Completed 200 OK in 1279ms (Views: 1250.4ms | ActiveRecord: 0.0ms | Allocations: 71097)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:06 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (53.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 54.9ms | Allocations: 3672)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:09 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2764)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3054)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:11 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2558)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2808)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:11 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.9ms | Allocations: 1860)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:12 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2592)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2843)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:14 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 2545)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 2792)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:14 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 1768)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:15 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 2582)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 2830)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:16 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms | Allocations: 1754)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:17 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 2585)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 2833)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:52 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 2545)
+Completed 200 OK in 56ms (Views: 55.7ms | ActiveRecord: 0.0ms | Allocations: 2792)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:52 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (13.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 13.3ms | Allocations: 1754)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:53 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2582)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 2830)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:54 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (4.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 4.0ms | Allocations: 1765)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:55 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2591)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 2839)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:55 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (3.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.5ms | Allocations: 1754)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:57 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 2588)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 2836)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:57 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.8ms | Allocations: 1765)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/new_recipe" for 127.0.0.1 at 2024-09-30 23:04:58 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"new_recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 7604)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 10533)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:04:59 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 2566)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 2813)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:04:59 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.8ms | Allocations: 1754)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: SELECT "recipes".* FROM "recipes" ORDER BY "create_at" DESC
+                                                   ^
+HINT:  Perhaps you meant to reference the column "recipes.created_at".
+):
+  
+app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Started GET "/recipe" for 127.0.0.1 at 2024-09-30 23:05:00 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6877)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 9196)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-30 23:08:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 319)
+  Rendered layout layouts/application.html.erb (Duration: 428.0ms | Allocations: 22730)
+Completed 200 OK in 478ms (Views: 432.2ms | ActiveRecord: 0.0ms | Allocations: 26802)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2024-09-30 23:08:02 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipes"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2763)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 3071)
+
+
+Started GET "/api/v1/recipes/index" for 127.0.0.1 at 2024-09-30 23:08:02 +0000
+Processing by Api::V1::RecipesController#index as */*
+  [1m[36mRecipe Load (71.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 200 OK in 242ms (Views: 89.3ms | ActiveRecord: 76.0ms | Allocations: 8706)
+
+
+Started GET "/recipe/8" for 127.0.0.1 at 2024-09-30 23:08:11 +0000
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"recipe/8"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2741)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3036)
+
+
