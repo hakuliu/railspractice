@@ -1676,7 +1676,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context2);
         }
-        function useState4(initialState) {
+        function useState5(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1688,7 +1688,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect4(create, deps) {
+        function useEffect5(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -2471,7 +2471,7 @@ var require_react_development = __commonJS({
         exports.useContext = useContext3;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect4;
+        exports.useEffect = useEffect5;
         exports.useId = useId;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect;
@@ -2479,7 +2479,7 @@ var require_react_development = __commonJS({
         exports.useMemo = useMemo3;
         exports.useReducer = useReducer;
         exports.useRef = useRef3;
-        exports.useState = useState4;
+        exports.useState = useState5;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -2975,9 +2975,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React8 = require_react();
+        var React9 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React9.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -4584,7 +4584,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React8.Children.forEach(props.children, function(child) {
+                React9.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -37133,14 +37133,14 @@ enableDismissTrigger(Toast);
 defineJQueryPlugin(Toast);
 
 // app/javascript/components/index.jsx
-var import_react5 = __toESM(require_react());
+var import_react6 = __toESM(require_react());
 var import_client = __toESM(require_client());
 
 // app/javascript/components/App.jsx
-var import_react4 = __toESM(require_react());
+var import_react5 = __toESM(require_react());
 
 // app/javascript/routes/index.jsx
-var import_react3 = __toESM(require_react());
+var import_react4 = __toESM(require_react());
 
 // node_modules/react-router-dom/dist/index.js
 var React2 = __toESM(require_react());
@@ -37904,6 +37904,13 @@ function useNavigateUnstable() {
     (!!options.replace ? navigator2.replace : navigator2.push)(path, options.state, options);
   }, [basename, navigator2, routePathnamesJson, locationPathname, dataRouterContext]);
   return navigate;
+}
+function useParams() {
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let routeMatch = matches[matches.length - 1];
+  return routeMatch ? routeMatch.params : {};
 }
 function useResolvedPath(to, _temp2) {
   let {
@@ -39108,18 +39115,64 @@ var Recipes = () => {
 };
 var Recipes_default = Recipes;
 
+// app/javascript/components/Recipe.jsx
+var import_react3 = __toESM(require_react());
+var Recipe = () => {
+  const params = useParams();
+  const navigate = useNavigate();
+  const [recipe, setRecipe] = (0, import_react3.useState)({ ingredients: "" });
+  (0, import_react3.useEffect)(() => {
+    const url = `/api/v1/show/${params.id}`;
+    fetch(url).then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error("Network response was not ok.");
+    }).then((response) => setRecipe(response)).catch(() => navigate("/recipes"));
+  }, [params.id]);
+  const addHtmlEntities = (str) => {
+    return String(str).replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+  };
+  const ingredientList = () => {
+    let ingredientList2 = "No ingredients available";
+    if (recipe.ingredients.length > 0) {
+      ingredientList2 = recipe.ingredients.split(",").map((ingredient, index) => /* @__PURE__ */ import_react3.default.createElement("li", { key: index, className: "list-group-item" }, ingredient));
+    }
+    return ingredientList2;
+  };
+  const recipeInstruction = addHtmlEntities(recipe.instruction);
+  return /* @__PURE__ */ import_react3.default.createElement("div", { className: "" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "hero position-relative d-flex align-items-center justify-content-center" }, /* @__PURE__ */ import_react3.default.createElement(
+    "img",
+    {
+      src: recipe.image,
+      alt: `${recipe.name} image`,
+      className: "img-fliod position-absolute"
+    }
+  ), /* @__PURE__ */ import_react3.default.createElement("div", { className: "overlay bg-dark position-absolute" }), /* @__PURE__ */ import_react3.default.createElement("h1", { className: "display-4 position-relative text-white" }, recipe.name)), /* @__PURE__ */ import_react3.default.createElement("div", { className: "container py-5" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "row" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-12 col-lg-3" }, /* @__PURE__ */ import_react3.default.createElement("ul", { className: "list-group" }, /* @__PURE__ */ import_react3.default.createElement("h5", { className: "mb-2" }, "Ingredients"), ingredientList())), /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-12 col-lg-7" }, /* @__PURE__ */ import_react3.default.createElement("h5", { className: "mb-2" }, "Preparation Instructions"), /* @__PURE__ */ import_react3.default.createElement("div", { dangerouslySetInnerHTML: {
+    __html: `${recipeInstruction}`
+  } })), /* @__PURE__ */ import_react3.default.createElement("div", { className: "col-sm-12 col-lg-2" }, /* @__PURE__ */ import_react3.default.createElement(
+    "button",
+    {
+      type: "button",
+      className: "btn btn-danger"
+    },
+    "Delete Recipe"
+  ))), /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/recipes", className: "btn btn-link" }, "Back to recipes")));
+};
+var Recipe_default = Recipe;
+
 // app/javascript/routes/index.jsx
-var routes_default = /* @__PURE__ */ import_react3.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react3.default.createElement(Routes, null, /* @__PURE__ */ import_react3.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react3.default.createElement(Home_default, null) }), /* @__PURE__ */ import_react3.default.createElement(Route, { path: "/recipes", element: /* @__PURE__ */ import_react3.default.createElement(Recipes_default, null) })));
+var routes_default = /* @__PURE__ */ import_react4.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react4.default.createElement(Routes, null, /* @__PURE__ */ import_react4.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react4.default.createElement(Home_default, null) }), /* @__PURE__ */ import_react4.default.createElement(Route, { path: "/recipes", element: /* @__PURE__ */ import_react4.default.createElement(Recipes_default, null) }), /* @__PURE__ */ import_react4.default.createElement(Route, { path: "/recipe/:id", element: /* @__PURE__ */ import_react4.default.createElement(Recipe_default, null) })));
 
 // app/javascript/components/App.jsx
-var App_default = (props) => /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, routes_default);
+var App_default = (props) => /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, routes_default);
 
 // app/javascript/components/index.jsx
 document.addEventListener("turbo:load", () => {
   const root = (0, import_client.createRoot)(
     document.body.appendChild(document.createElement("div"))
   );
-  root.render(/* @__PURE__ */ import_react5.default.createElement(App_default, null));
+  root.render(/* @__PURE__ */ import_react6.default.createElement(App_default, null));
 });
 /*! Bundled license information:
 
